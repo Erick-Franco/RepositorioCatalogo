@@ -8,7 +8,7 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/Erick-Franco/CatalogoRep.git
+          uri: https://github.com/Erick-Franco/RepositorioCatalogo.git
           searchPaths: config-data
           default-label: main
   security:
