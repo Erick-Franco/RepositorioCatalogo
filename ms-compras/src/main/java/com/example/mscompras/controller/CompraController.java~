@@ -4,9 +4,7 @@ import com.example.mscompras.entity.Compra;
 import com.example.mscompras.service.CompraService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import com.example.mscompras.repository.CompraRepository;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -14,9 +12,6 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/compras")
 public class CompraController {
-
-    @Autowired
-    private CompraRepository compraRepository;
 
     @Autowired
     private CompraService compraService;
@@ -47,17 +42,12 @@ public class CompraController {
     }
 
     @GetMapping("/filtrar")
-    public List<Compra> filtrarCompras(@RequestParam(required = false) Integer id,
-                                       @RequestParam(required = false) String nombre,
-                                       @RequestParam(required = false) String fecha) {
-        // Lógica de filtrado por id, nombre o fecha
-        if (id != null) {
-            return compraRepository.findById(id).map(List::of).orElseGet(ArrayList::new);
-        }
-        // Puedes agregar más lógica para otros filtros si es necesario
-        return new ArrayList<>();
+    public List<Compra> filtrarCompras(
+            @RequestParam(required = false) Integer id,
+            @RequestParam(required = false) String nombre,
+            @RequestParam(required = false) String fecha) {
+        return compraService.filtrarCompras(id, nombre, fecha);
     }
-
 
 
 }

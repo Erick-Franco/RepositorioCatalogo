@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './ApiComponent.css';
-
+import './pages/ApiComponent.css';
 interface Compra {
     id: number;
     descripcion: string;

@@ -18,5 +18,5 @@ public interface CompraService {
     void eliminar(Integer id);
 
 
-    Optional<Compra> filtrarCompras(Integer id, String nombre, String fecha);
+    List<Compra> filtrarCompras(Integer id, String nombre, String fecha);
 }
