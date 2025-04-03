@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: ms-compra-service
+  profiles:
+    active: development
+  config:
+    import: optional:configserver:http://root:123456@localhost:7071
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/ms_catalogo?useSSL=false&serverTimezone=UTC
+    username: root
+    password: ""
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate.dialect: org.hibernate.dialect.MySQL8Dialect
+

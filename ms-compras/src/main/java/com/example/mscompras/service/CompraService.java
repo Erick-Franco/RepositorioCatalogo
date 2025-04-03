@@ -1,0 +1,19 @@
+package com.example.mscompras.service;
+
+
+import com.example.mscompras.entity.Compra;
+
+import java.util.List;
+import java.util.Optional;
+
+public interface CompraService {
+    List<Compra> listar();
+
+    Optional<Compra> buscar(Integer id);
+
+    Compra guardar(Compra compra);
+
+    Compra actualizar(Integer id, Compra compra);
+
+    void eliminar(Integer id);
+}
