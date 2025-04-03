@@ -50,13 +50,19 @@ public class CompraController {
     public List<Compra> filtrarCompras(@RequestParam(required = false) Integer id,
                                        @RequestParam(required = false) String nombre,
                                        @RequestParam(required = false) String fecha) {
-        // Lógica de filtrado por id, nombre o fecha
         if (id != null) {
             return compraRepository.findById(id).map(List::of).orElseGet(ArrayList::new);
+        } else if (nombre != null && fecha != null) {
+            return compraRepository.findByNombreContainingIgnoreCaseAndFecha(nombre, fecha);
+        } else if (nombre != null) {
+            return compraRepository.findByNombreContainingIgnoreCase(nombre);
+        } else if (fecha != null) {
+            return compraRepository.findByFecha(fecha);
         }
-        // Puedes agregar más lógica para otros filtros si es necesario
-        return new ArrayList<>();
+        return compraRepository.findAll();
     }
+
+
 
 
 

@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import './ApiComponent.css';
+
 
 interface Compra {
     id: number;
     descripcion: string;
     fecha: string;
     total: number;
+    nombre:string;
 }
 
 const ApiComponent: React.FC = () => {
@@ -55,14 +56,15 @@ const ApiComponent: React.FC = () => {
                     value={id}
                     onChange={(e) => setId(e.target.value)}
                 />
-                <button className="filter-button" onClick={filtrarCompras}>Filtrar</button>
+
             </div>
 
             <h2>Lista de Compras</h2>
             <ul className="compras-list">
                 {compras.map((compra) => (
                     <li key={compra.id}>
-                        {compra.descripcion} - {compra.fecha} - ${compra.total}
+                        {compra.descripcion} - {compra.fecha} - ${compra.total}- ${compra.nombre}
+
                     </li>
                 ))}
             </ul>
