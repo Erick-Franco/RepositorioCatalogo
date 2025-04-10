@@ -12,6 +12,7 @@ public class MsRegistryServerApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(MsRegistryServerApplication.class, args);
+        System.out.println("INICIADO CORRECTAMENTE REGISTRY");
     }
 
 

@@ -8,6 +8,7 @@ public class MsClientesApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(MsClientesApplication.class, args);
+		System.out.println("Servicio de clientes iniciado...");
 	}
 
 }
