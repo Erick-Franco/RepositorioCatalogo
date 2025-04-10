@@ -9,8 +9,10 @@ import com.example.mscompras.repository.CompraRepository;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @CrossOrigin(origins = "http://localhost:5173")
+
 @RestController
 @RequestMapping("/compras")
 public class CompraController {
