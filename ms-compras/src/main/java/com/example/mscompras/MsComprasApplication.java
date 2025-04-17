@@ -8,6 +8,7 @@ public class MsComprasApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(MsComprasApplication.class, args);
+		System.out.println("Servicio de compras iniciado...");
 	}
 
 }
