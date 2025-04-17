@@ -1,5 +1,6 @@
 import ComprasList from "./pages/ComprasList";
 import "./index.css";
+
 function App() {
     return (
         <div>
